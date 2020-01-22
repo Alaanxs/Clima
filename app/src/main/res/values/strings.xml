@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Clima</string>
+    <string name="grados">23°</string>
+    <string name="ciudad">Ciudad de México</string>
+    <string name="clima">Nublado</string>
+
+    <string name="txt_bienvenida">
+        Bienvenido a mi primera app en AndroidStudio para poder ver el clima.
+    </string>
+    <string name="clima_cdmx">Clima de la Ciudad de México</string>
+    <string name="clima_canada">Clima de Canada</string>
+</resources>
