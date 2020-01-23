@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         val ciudad = intent.getStringExtra("com.example.clima.ciudades.CIUDAD")
 
         if(Network.hayRed(this)){
-            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id="+ciudad+"&appid=e4b72ea7c43b8c4ad676e5def05848fd&units=metric&lang=es")
+            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id=$ciudad&appid=e4b72ea7c43b8c4ad676e5def05848fd&units=metric&lang=es")
         }
         else{
             Toast.makeText(this, "No hay internet", Toast.LENGTH_LONG).show()
