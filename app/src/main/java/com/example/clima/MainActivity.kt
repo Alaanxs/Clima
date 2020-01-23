@@ -26,31 +26,14 @@ class MainActivity : AppCompatActivity() {
         ciudadd = findViewById<TextView>(R.id.ciudad)
         estatus = findViewById<TextView>(R.id.estatus)
 
-        //val ciudades = intent.getStringExtra("com.example.clima.ciudades.CIUDAD")
+        val ciudad = intent.getStringExtra("com.example.clima.ciudades.CIUDAD")
 
         if(Network.hayRed(this)){
-            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id=3530597&appid=e4b72ea7c43b8c4ad676e5def05848fd")
+            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id="+ciudad+"&appid=e4b72ea7c43b8c4ad676e5def05848fd&units=metric&lang=es")
         }
         else{
-
+            Toast.makeText(this, "No hay internet", Toast.LENGTH_LONG).show()
         }
-
-        /*val ciudadmx = Ciudad("Ciudad de México", 25, "Nublado")
-        val canada = Ciudad("Canada", 2, "Soleado")
-
-        if(ciudades == "ciudad-mexico"){
-            grados?.text = ciudadmx.grados.toString()+"°"
-            ciudad?.text = ciudadmx.nombre
-            estatus?.text = ciudadmx.estatus
-        }
-        else if(ciudades == "canada"){
-            grados?.text = canada.grados.toString()+"°"
-            ciudad?.text = canada.nombre
-            estatus?.text = canada.estatus
-        }
-        else{
-            Toast.makeText(this, "Ningun dato", Toast.LENGTH_LONG).show()
-        }*/
     }
 
     private fun solicitudHTTPVolley(url:String){
@@ -73,7 +56,6 @@ class MainActivity : AppCompatActivity() {
             },
             Response.ErrorListener {  })
 
-        // Add the request to the RequestQueue.
         queue.add(stringRequest)
     }
 }
