@@ -33,4 +33,11 @@
         android:layout_height="wrap_content"
         android:text="@string/clima_canada"
         android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/bShanghai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clima_shangahi"
+        android:textSize="24sp" />
 </LinearLayout>
